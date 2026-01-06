@@ -21,6 +21,12 @@ function Home() {
       description: '消息提示框',
       params: '',
     },
+    {
+      name: 'StreamProgress',
+      path: '/progress',
+      description: '直播进度图',
+      params: '?startTime=now&phases=开场,游戏,休息,抽奖,结束&durations=1,2,1,1,1',
+    },
   ]
 
   return (

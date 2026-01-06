@@ -42,3 +42,33 @@ export interface OverlayState {
   statusBar: StatusBarData | null
   messages: MessageData[]
 }
+
+// ========== StreamProgress 相关类型 ==========
+
+// 流程节点
+export interface StreamPhase {
+  id: string
+  name: string
+  icon?: string         // 可选的图标符号
+  duration?: number     // 该节点时长（秒）
+}
+
+// 时间进度数据
+export interface TimeProgressData {
+  startTime: number        // 直播开始时间戳（毫秒）
+  plannedDuration: number  // 计划总时长（秒）
+  currentTime?: number     // 当前时间戳（用于服务端同步，可选）
+}
+
+// 流程进度数据
+export interface FlowProgressData {
+  phases: StreamPhase[]       // 所有节点
+  currentPhaseId: string      // 当前所在节点 ID
+  completedPhaseIds?: string[] // 已完成的节点 ID 列表
+}
+
+// 完整进度数据（组合使用时）
+export interface StreamProgressData {
+  time: TimeProgressData
+  flow: FlowProgressData
+}
