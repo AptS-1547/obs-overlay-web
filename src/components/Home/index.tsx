@@ -27,6 +27,12 @@ function Home() {
       description: '直播进度图',
       params: '?startTime=now&phases=开场,游戏,休息,抽奖,结束&durations=1,2,1,1,1',
     },
+    {
+      name: 'ClockDisplay',
+      path: '/clock',
+      description: '时间显示',
+      params: '?layout=vertical&fontSize=48',
+    },
   ]
 
   return (
